@@ -1,0 +1,635 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>WeUI+在线演示</title>
+ <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=0">
+  <link rel="stylesheet" href="style/weui.css"/>
+  <link rel="stylesheet" href="style/weui2.css"/>
+  <link rel="stylesheet" href="style/weui3.css"/>
+  <link rel="stylesheet" href="style/style.css"/>
+  <link rel="icon" href="favicon.png"> <link rel="icon" href="favicon.ico">
+      <!-- <script src="zepto.min.js"></script> -->
+      <script src="js/php.js"></script>
+
+      <script type="text/javascript" src="js/jquery-2.0.0.min.js"></script>
+      <script type="text/javascript" src="js/jquery-ui.js"></script>
+      <script type="text/javascript" src="js/jquery.htmlClean.js"></script>
+      <script type="text/javascript" src="js/scripts.js"></script>
+      <script type="text/javascript" src="setpanel/setPanel.js"></script>
+
+      <script>
+     
+  $(function(){
+  /* document.querySelector('body').addEventListener('touchmove', function(e) {
+    e.preventDefault();
+})*/
+	  $('.js-category').click(function(){
+			$parent = $(this).parent('li');
+		   if($parent.hasClass('js-show')){
+                        $parent.removeClass('js-show');
+                        $(this).children('i').removeClass('icon-35').addClass('icon-74');
+                    }else{
+                        $parent.siblings().removeClass('js-show');
+                        $parent.addClass('js-show');
+                        $(this).children('i').removeClass('icon-74').addClass('icon-35');
+                         $parent.siblings().find('i').removeClass('icon-35').addClass('icon-74');
+                    }
+		  });
+	  }); 
+      </script>
+</head>
+
+<body ontouchstart  class="page-bg edit">
+<div class="topBtnGroup">
+    <ul class="nav" id="menu-layoutit">
+        <li>
+        <div class="btn-group">
+            <a class="btn btn-primary" href="http://justjavac.com" target="_blank"><i class="icon-home icon-white"></i>首页</a>
+        </div>
+        <div class="btn-group" data-toggle="buttons-radio">
+            <button type="button" id="edit" class="btn btn-primary"><i class="icon-edit icon-white"></i>编辑</button>
+            <button type="button" class="btn btn-primary active" id="devpreview"><i class="icon-eye-close icon-white"></i>布局编辑</button>
+            <button type="button" class="btn btn-primary" id="sourcepreview"><i class="icon-eye-open icon-white"></i>预览</button>
+        </div>
+        <div class="btn-group">
+            <button type="button" class="btn btn-primary" data-target="#downloadModal" rel="/build/downloadModal" role="button" data-toggle="modal"><i class="icon-chevron-down icon-white"></i>下载</button>
+            <button class="btn btn-primary" href="/share/index" role="button" data-toggle="modal" data-target="#shareModal"><i class="icon-share icon-white"></i>保存</button>
+            <button class="btn btn-primary" href="#clear" id="clear"><i class="icon-trash icon-white"></i>清空</button>
+        </div>
+        <div class="btn-group">
+                <button class="btn btn-primary" href="#undo" id="undo"><i class="icon-arrow-left icon-white"></i>撤销</button>
+                <button class="btn btn-primary" href="#redo" id="redo"><i class="icon-arrow-right icon-white"></i>重做</button>
+        </div>
+        </li>
+    </ul>    
+</div>
+<div style="padding-left:210px;padding-right:210px;">
+<div class="menu sidebar-nav">
+    <div class="page-bd">
+
+        <ul>
+            <li>
+                <div class="weui-flex js-category" >
+                    <div class="weui-flex-item" >1.1 表单项目</div>
+                    <i class="icon icon-74"></i>
+                </div>
+                <div class="page-category js-categoryInner">
+                    <div class="weui_cells weui_cells_access " style="margin-top: 0px;">
+                        <div class="lyrow ui-draggable">
+                            <div class="lite-title getHtml" fileData="my/form0.html">
+                                        表单容器
+                                    <a href="#close" class="remove">*删除*</a> 
+                                    <span class="drag">*拖动*</span>
+                            </div>
+                            <div class="view_content hidden"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page-category js-categoryInner">
+                    <div class="weui_cells weui_cells_access " style="margin-top: 0px;">
+                        <div class="ui-draggable">
+                            <div class="lite-title getHtml" fileData="my/form_input1.html">
+                                    输入控件
+                                    <a href="#close" class="remove fr">删除*</a> 
+                                    <span class="drag fr">拖动*</span> 
+                                    <a class="fr" onclick="setFunc(this)" item-type="input-set-1">设置*</a>
+                            </div>
+                            <div class="view_content hidden"></div>
+                        </div>
+                    </div>
+                </div>
+            </li> 
+         
+
+     <li>
+        <div class="weui-flex js-category" >
+                    <div class="weui-flex-item" >1. 容器</div>
+                    <i class="icon icon-74"></i>
+                </div>
+                <div class="page-category js-categoryInner">
+                
+                    <div class="weui_cells weui_cells_access " style="margin-top: 0px;">
+
+
+
+        <div class="lyrow ui-draggable">
+            <a class="weui_cell" href="c/form1.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>单选,复选,逻辑开关</p>
+                </div>
+                <div class="weui_cell_ft drag ">3.1</div>
+            </a>
+            <div class="view_content"></div>
+        </div>
+
+            <a class="weui_cell" href="c/form2.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>输入框,表单验证</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+                        <a class="weui_cell" href="c/form3.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>按钮</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+                        <a class="weui_cell" href="c/form4.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>picker,省市县,日期,时间</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>            
+                         <a class="weui_cell" href="c/form5.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>popup,select</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a> 
+                          <a class="weui_cell" href="c/form6.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>加减操作,打分</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>                  
+                          <a class="weui_cell" href="c/form8.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>搜索</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a> 
+                                    <a class="weui_cell" href="c/form9.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>表单预览</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+                                                <a class="weui_cell" href="c/form10.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">slider滑块</p>
+                </div>
+                <div class="weui_cell_ft">3.6</div>
+            </a>   
+     <a class="weui_cell" href="c/form11.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">自定义弹出层</p>
+                </div>
+                <div class="weui_cell_ft">4.6</div>
+            </a>  
+      <a class="weui_cell" href="c/form12.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">新增单选,复选,文本框,文本域默认样式</p>
+                </div>
+                <div class="weui_cell_ft">4.9</div>
+            </a>                                          
+        </div>
+                    
+                </div>
+            </li><li>
+                <div class="weui-flex js-category" >
+                    <p class="weui-flex-item" >2. 基础</p>
+                    <i class="icon icon-74"></i>
+                </div>
+                 <div class="page-category js-categoryInner">
+                     <div class="weui_cells weui_cells_access" style="margin-top: 0px;">
+            <a class="weui_cell" href="c/base1.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>footer</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+            <a class="weui_cell" href="c/base2.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>flex</p>
+                </div>
+                <div class="weui_cell_ft">3.2</div>
+            </a>
+             <a class="weui_cell" href="c/base3.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>字体大小,颜色,背景,h1-h6</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+              <a class="weui_cell" href="c/base4.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>1px边框,圆角矩形</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+              <a class="weui_cell" href="c/base5.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p >九宫格</p>
+                </div>
+                <div class="weui_cell_ft">3.3</div>
+            </a> 
+               <a class="weui_cell" href="c/base6.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>表格</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a> 
+                          <a class="weui_cell" href="c/base7.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>文章格式</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>  
+                           <a class="weui_cell" href="c/base8.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>9种常见颜色值,时间线,分割线,加载中</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>             
+                            <a class="weui_cell" href="c/base9.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">导航,动画,小红点,徽标</p>
+                </div>
+                <div class="weui_cell_ft">3.6</div>
+            </a>            
+                            <a class="weui_cell" href="c/base10.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>图标</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>  
+                                      <a class="weui_cell" href="c/base11.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>标签,图片效果,头像</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>    
+                                               <a class="weui_cell" href="c/base12.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>gallery</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>  
+                                                <a class="weui_cell" href="c/base13.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p  >仿微信底部菜单</p>
+                </div>
+                <div class="weui_cell_ft">3.3</div>
+            </a>            
+                                                              <a class="weui_cell" href="c/base14.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p  class="weui-reddot">视频角标</p>
+                </div>
+                <div class="weui_cell_ft">3.7</div>
+            </a>   
+                                                                        <a class="weui_cell" href="c/base15.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p  class="weui-reddot">倒计时</p>
+                </div>
+                <div class="weui_cell_ft">3.7</div>
+            </a>       
+        </div>                   
+                </div>               
+            </li>
+             <li>
+                <div class="weui-flex js-category" >
+                    <p class="weui-flex-item">3. 布局</p>
+                    <i class="icon icon-74"></i>
+                </div>
+                 <div class="page-category js-categoryInner">
+                     <div class="weui_cells weui_cells_access" style="margin-top: 0px;">
+            <a class="weui_cell" href="c/cell1.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>列表list</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+            <a class="weui_cell" href="c/cell2.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>面板panel</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+              <a class="weui_cell" href="c/cell3.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>分页,评论</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>          
+             <a class="weui_cell" href="c/cell4.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>上拉下拉</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+            <a class="weui_cell" href="c/cell5.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>微信文章</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>            
+            <a class="weui_cell" href="c/cell6.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>js模板</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a> 
+              <a class="weui_cell" href="c/cell7.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>朋友圈</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>           
+              <a class="weui_cell" href="c/cell8.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>Msg成功,失败,页面空白占用,弹出图片</p>
+                </div>
+                <div class="weui_cell_ft">3.2</div>
+            </a>               
+               <a class="weui_cell" href="c/cell9.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>显示展开,手风琴</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>           
+                      <a class="weui_cell" href="c/cell11.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">仿微信左滑动删除</p>
+                </div>
+                <div class="weui_cell_ft">4.2</div>
+            </a>   
+                      <a class="weui_cell" href="c/cell12.php">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">点击加载分页</p>
+                </div>
+                <div class="weui_cell_ft">4.5</div>
+            </a> 
+                                  <a class="weui_cell" href="c/cell13.php">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">到底部自动加载分页</p>
+                </div>
+                <div class="weui_cell_ft">4.5</div>
+            </a> 
+                       <a class="weui_cell" href="c/cell14.php">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p class="weui-reddot">选择弹出层</p>
+                </div>
+                <div class="weui_cell_ft">4.5</div>
+            </a>           
+                                                    
+        </div>                   
+                </div>               
+            </li>                     
+            <li>
+                <div class="weui-flex js-category" >
+                    <p class="weui-flex-item " style="position: relative;margin-right: 10px;">4. 组件<span class="weui-badge" style="position: absolute;top: -.4em;">1</span></p>
+                    <i class="icon icon-74"></i>
+                </div>
+                 <div class="page-category js-categoryInner">
+                     <div class="weui_cells weui_cells_access" style="margin-top: 0px;">
+            <a class="weui_cell" href="c/js1.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>dialog,toptips</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+            <a class="weui_cell" href="c/js2.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>actions</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+             <a class="weui_cell" href="c/js3.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>上传进度条</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>    
+              <a class="weui_cell" href="c/js4.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>navbar</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>            
+             <a class="weui_cell" href="c/js5.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>tabbar</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>             
+              <a class="weui_cell" href="c/js6.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>轮播swipe</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>  
+              <a class="weui_cell" href="c/js7.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>微信分享</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>                               
+               <a class="weui_cell" href="c/js8.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>音频播放,视频</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a> 
+               <a class="weui_cell" href="c/js9.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>二维码生成,名片二维码,左滑动</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a> 
+                <a class="weui_cell" href="c/js10.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>图片上传,压缩</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>           
+      
+      
+                     <a class="weui_cell" href="https://we7.shanliwawa.top/app/index.php?i=1&c=entry&do=fm&m=yoby_test">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>JSSDK演示</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>  
+                   <a class="weui_cell" href="c/js11.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>lazy懒加载图片</p>
+                </div>
+                <div class="weui_cell_ft">3.1</div>
+            </a>
+                   <a class="weui_cell" href="c/js12.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p >摇一摇</p>
+                </div>
+                <div class="weui_cell_ft">3.4</div>
+            </a> 
+               			
+                 <a class="weui_cell" href="c/js14.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p >fullpage单页</p>
+                </div>
+                <div class="weui_cell_ft">3.5</div>
+            </a>	  
+         	
+                              <a class="weui_cell" href="c/js16.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p >jssdk音频播放</p>
+                </div>
+                <div class="weui_cell_ft">4.1</div>
+            </a>	
+                            <a class="weui_cell" href="c/js17.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p >音频播放插件</p>
+                </div>
+                <div class="weui_cell_ft">4.1</div>
+            </a>
+               
+              <a class="weui_cell" href="c/js19.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>奖品弹出框</p>
+                </div>
+                <div class="weui_cell_ft">4.6</div>
+            </a>     
+               <a class="weui_cell" href="c/js20.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>支付场景</p>
+                </div>
+                <div class="weui_cell_ft">4.7</div>
+            </a>      
+                <a class="weui_cell" href="c/js21.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>图片横排123张图片效果</p>
+                </div>
+                <div class="weui_cell_ft">4.7</div>
+            </a>  
+              <a class="weui_cell" href="c/js22.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>marquee</p>
+                </div>
+                <div class="weui_cell_ft">4.9.2</div>
+            </a>    
+                          <a class="weui_cell" href="c/js23.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>侧边栏</p>
+                </div>
+                <div class="weui_cell_ft">4.9.2</div>
+            </a>     
+        </div>                   
+                </div>               
+            </li>            
+                      
+            <li>
+                <div class="weui-flex js-category" >
+                    <p class="weui-flex-item">5. js函数和css类</p>
+                    <i class="icon icon-74"></i>
+                </div>
+                 <div class="page-category js-categoryInner">
+                     <div class="weui_cells weui_cells_access" style="margin-top: 0px;">
+            <a class="weui_cell" href="c/css1.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>zepto扩展方法</p>
+                </div>
+                <div class="weui_cell_ft">只包含zepto.min.js之内</div>
+            </a>
+            <a class="weui_cell" href="c/css2.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>js/css插件一览表</p>
+                </div>
+                <div class="weui_cell_ft">插件和对应功能</div>
+            </a>
+            <a class="weui_cell" href="c/css3.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>js写的php函数一览表</p>
+                </div>
+                <div class="weui_cell_ft">单独可用</div>
+            </a> 
+             <a class="weui_cell" href="c/css4.html">
+                <div class="weui_cell_bd weui_cell_primary">
+                    <p>css常用类一览表</p>
+                </div>
+                <div class="weui_cell_ft">基础类,单独用</div>
+            </a>
+        </div>                   
+                </div>               
+            </li>
+        </ul>
+    </div>
+</div>
+
+<div class="setPanel page-bg">
+    <div class="weui-flex-item tcenter">设置面板</div>
+    <div id="setMain">
+        
+    </div>
+</div>
+
+<div class="main-container ">
+    <div class="container-fluid demo ui-sortable drug-in"></div>
+</div>
+</div>
+<div id="download-layout"></div>
+
+<!--/.fluid-container--> 
+
+<div class="weui_mask"></div>
+
+<div class="modal hide fade" role="dialog" id="editorModal">
+  <div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+    <h3>编辑</h3>
+  </div>
+  <div class="modal-body">
+    <p>
+      <textarea id="contenteditor"></textarea>
+    </p>
+  </div>
+  <div class="modal-footer"> <a id="savecontent" class="btn btn-primary" data-dismiss="modal">保存</a> <a class="btn" data-dismiss="modal">关闭</a> </div>
+</div>
+
+<div class="modal fade weui-custom-pop" role="dialog" id="downloadModal" style="width:600px;max-width: 800px;">
+  <div class="weui-custom-hd"> <a class="close" data-dismiss="modal">×</a>
+    <h3>下载</h3>
+  </div>
+  <div class="weui-custom-bd">
+    <p>已在下面生成干净的HTML, 可以复制粘贴代码到你的项目.</p>
+    <div class="btn-group">
+      <button type="button" id="fluidPage" class="active btn btn-info"><i class="icon-fullscreen icon-white"></i> 自适应宽度</button>
+      <button type="button" class="btn btn-info" id="fixedPage"><i class="icon-screenshot icon-white"></i> 固定宽度</button>
+    </div>
+    <br>
+    <br>
+    <div style="height:400px;text-align: left;">
+      <textarea style="width:99%;min-height:300px;padding-top:5px;"></textarea>
+    </div>
+  </div>
+  <div class="weui-custom-ft"> <a class="btn" data-dismiss="modal">关闭</a> </div>
+</div>
+
+<div class="modal hide fade" role="dialog" id="shareModal">
+  <div class="modal-header"> <a class="close" data-dismiss="modal">×</a>
+    <h3>保存</h3>
+  </div>
+  <div class="modal-body">保存成功</div>
+  <div class="modal-footer"> <a class="btn" data-dismiss="modal">Close</a> </div>
+</div>
+
+<div class="top" style="display: none;"><i class="icon icon-7"></i></div>
+
+<script>
+
+    
+     
+    $(window,document).bind('scroll',function(){
+    if($(this).scrollTop() > 120){
+            $('.top').fadeIn('slow');
+        }else{
+        $('.top').fadeOut('slow');
+        }
+    });
+	
+    $(".top i").bind("tap",function(){
+        $("html,body").animate({"scrollTop":0});
+    });    
+         
+         
+</script>
+</body>
+</html>

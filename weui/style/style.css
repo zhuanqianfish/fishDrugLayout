@@ -1,0 +1,84 @@
+.menu{
+    width: 200px;
+    position: absolute;
+    left:0;
+}
+
+.menu .ui-draggable{
+    margin-top: 10px;
+}
+
+.fr{
+    float: right;
+}
+
+.redBorder{
+    border: 1px solid red;
+}
+.main-container{
+    width: 97%;
+    margin-left: 0px;
+    margin-top: 10px;
+    padding: 30px 15px 15px 15px;
+    border: 1px solid #DDDDDD;
+    border-radius: 4px;
+    word-wrap: break-word;
+    position: relative;
+}
+.drug-in{
+    min-height: 60px;
+}
+
+.topBtnGroup{
+    padding: 10px;
+}
+
+.topBtnGroup .btn-group{
+    display:block;
+    float: left;
+}
+
+.topBtnGroup .nav .btn{
+    display:block;
+    float: left;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    margin:5px;
+}
+
+.edit .lite-title{
+    display: block;
+    border: #ddd 1px dashed;
+}
+
+.devpreview .lite-title, .sourcepreview .lite-title{
+    display: none;
+    border: #ddd 1px dashed;
+}
+
+
+.hidden{
+    display: none;
+}
+
+.ui-draggable-dragging { display:block;}
+/*.demo .ui-sortable-placeholder { outline: 5px dotted #ddd; visibility: visible!Important; border-radius: 4px; }*/
+.ui-sortable-placeholder { outline: 1px dashed #ddd;visibility: visible!Important; border-radius: 4px;}
+
+#download-layout {
+    display: none;
+}
+
+
+.setPanel {
+    width: 200px;
+    position: absolute;
+    right: 0;
+    background: #FFFFFF;
+    min-height: 300px;
+}
+
+.setPanel h2 {
+    text-align: center;
+}
